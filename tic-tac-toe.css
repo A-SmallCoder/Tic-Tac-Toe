@@ -20,6 +20,8 @@ body {
   justify-content: center;
   align-items: center;
   color: var(--black);
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 h1 {
@@ -33,10 +35,38 @@ h1 span {
   color: var(--coral);
 }
 
-#game {
+#game3, #game7, #game5 {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  font-size: 1em;
+  border-radius: 15px;
+  margin-bottom: -5px;
+  margin-top: -5px;
+}
+ul li button{
+  margin:2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1em;
+  border:3px solid #e4e0cb;
+  outline: none;
+}
+ul li button:hover{
+  background-color: white;
+}
+ul li button.active{
+  background-color: white;
+  border:3px solid #FFD700;
 }
 
 .controls {
@@ -49,8 +79,20 @@ h1 span {
   grid-gap: 15px;
 }
 
-#status {
-  font-size: 24px;
+#board7 {
+  display: grid;
+  grid-template-columns: repeat(7, 90px);
+  grid-gap: 8px;
+}
+
+#board5 {
+  display: grid;
+  grid-template-columns: repeat(5, 110px);
+  grid-gap: 9px;
+}
+
+.status {
+  font-size: 20px;
   margin: 20px 0;
   text-align: center;
   background: white;
@@ -61,25 +103,25 @@ h1 span {
   border-radius: 5px;
 }
 
-#status.you-won {
+.status.you-won {
   color: var(--green);
   border-top: 4px solid var(--green);
   font-weight: bold;
 }
 
-#status.you-won::before,#status.you-won::after {
+.status.you-won::before,.status.you-won::after {
   content: '🎉';
   display: inline-block;
   margin-right: 8px;
 }
 
-#status.draw{
+.status.draw{
   color:var(--red);
   border-top: 4px solid var(--red);
   font-weight: bold;
 }
 
-#status.draw::after,#status.draw::before{
+.status.draw::after,#status.draw::before{
   content:'💫';
   display: inline-block;
   margin-right: 8px;
@@ -98,6 +140,14 @@ h1 span {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+#board7 .square{
+  width: 90px;
+  height: 90px;
+}
+#board5 .square{
+  width: 110px;
+  height: 110px;
 }
 
 .square.X {
@@ -140,7 +190,7 @@ h1 span {
   cursor: pointer;
 }
 
-#blocker{
+#blocker3{
   background-color: transparent;
   display: none;
   position: absolute;
@@ -148,4 +198,18 @@ h1 span {
   width:400px;
   height:460px;
   top:34%;
+}#blocker5{
+  background-color:transparent;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width:600px;
+  height:620px;
+  top:39%;
+}
+
+@media only screen and (max-width: 600px) {
+  #game{
+    margin:50px;
+  }
 }

@@ -2,19 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content="Play tic tac toe with a friend anytime. play on a 3x3, 4x4, or 5x5 board. who will be the winner?">
+    <meta name="keywords" content="tic tac toe, boardgame, instructions, games for kids">
+    <meta name="author" content="Andrew-Lloyd Small">
+    <meta name="robots" content="index, follow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="tic-tac-toe.css" />
     <script src="tic-tac-toe.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script data-ad-client="ca-pub-7725683058473450" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
 
-  <body>
+  <body id="body">
     <h1>Tic <span>-Tac-</span> Toe</h1>
-    <div id="game">
-      <div id="status">Move your mouse over a square and click to play an X or an O.</div>
+    <ul>
+      <li><button id="s" class=" three active" onclick="changeBoard(3)">3 x 3</button></li>
+      <li><button id="ss" class="four" onclick="changeBoard(5)">5 x 5</button></li>
+      <!--<li><button class="five" onclick="changeBoard(7)">7x7</button></li>-->
+      <li><button id="sound" onclick="toggleSound()">Toggle Sound</button></li>
+    </ul>
+    
+    <div id="game3">
+    
+      <div id="status" class="status">Move your mouse over a square and click to play an X or an O.</div>
 
-      <div id="board">
+      <div id="board" >
         <div></div>
         <div></div>
         <div></div>
@@ -27,11 +41,54 @@
       </div>
 
       <div class="controls">
-        <button class="btn" onclick="restart()">New Game</button>
+        <button class="btn" onclick="restart(),setboard()">New Game</button>
       </div>
 
     </div>
 
-    <div id="blocker"></div>
+    <div id="game5" style="display: none;">
+
+      
+
+      <div id="status5" class="status">Move your mouse over a square and click to play an X or an O.</div>
+        
+        <div id="board5">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          
+        </div>
+
+        <div class="controls">
+          <button class="btn" onclick="restart(),setboard()">New Game</button>
+        </div>
+
+    </div>
+
+
+    <div id="blocker3"></div>
+    <div id="blocker5"></div>
   </body>
 </html>
