@@ -208,6 +208,13 @@ ul li button.active{
   top:39%;
 }
 
+#manualDiv{
+  background-color: rgb(255, 247, 232);
+  border-radius: 15px;
+  border: solid 1px grey;
+  padding:15px;
+}
+
 @media only screen and (max-width: 600px) {
   #game{
     margin:50px;

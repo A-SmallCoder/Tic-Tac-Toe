@@ -137,9 +137,9 @@ function checkWinner5(){
 
         if(lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3] == "XXXX" ||
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("XXXX") ||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] == ("XXXXO")||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] == ("OXXXX")||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] == ("XXXXX")){
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] == ("XXXXO")||
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] == ("OXXXX")||
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] == ("XXXXX")){
             document.getElementById("status5").innerHTML="Congratulations! X is the winner! You have the first play in the next game.";
             threelines()
             lastMove = "O";
@@ -151,9 +151,9 @@ function checkWinner5(){
             }
         }else if(lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3] == "OOOO" ||
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("XXXX") ||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] ==("XOOOO")||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] ==("OOOOX")||
-         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4]+lines[i][5] ==("OOOOO")){
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("XOOOO")||
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("OOOOX")||
+         lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("OOOOO")){
             document.getElementById("status5").innerHTML="Congratulations! O is the winner! You have the first play in the next game.";
             threelines()
             lastMove = "X";
