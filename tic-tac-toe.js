@@ -67,7 +67,6 @@ function play(e){
 //arrays that keeps track of state of the game
 var gameTracker = ["","","","","","","","",""];
 var gameTracker5 = ["","","","","","","","","","","","","","","","","","","","","","","","",""];
-var gameTracker7 = ["","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""];
 
 
 //checks if there is a winner after each move
@@ -84,7 +83,7 @@ function checkWinner(){
     var lines = [row1,row2,row3,col1,col2,col3,diag1,diag2];
 
     for (var i=0;i<lines.length;i++){
-        if((lines[i][0])+(lines[i][1])+(lines[i][2]) == "XXX"){
+        if(lines[i][0]+lines[i][1]+lines[i][2] == "XXX"){
             document.getElementById("status").innerHTML="Congratulations! X is the winner! You have the first play in the next game.";
             document.getElementById("status").classList.add("you-won");
             document.getElementById("status").classList.remove("draw");
@@ -96,7 +95,7 @@ function checkWinner(){
                 theme.currentTime = 0;
                 theme.pause()
             }
-        }else if((lines[i][0])+(lines[i][1])+(lines[i][2]) == "OOO"){
+        }else if(lines[i][0]+lines[i][1]+lines[i][2] == "OOO"){
             document.getElementById("status").innerHTML="Congratulations! O is the winner! You have the first play in the next game.";
             document.getElementById("status").classList.add("you-won");
             document.getElementById("status").classList.remove("draw");
@@ -141,9 +140,10 @@ function checkWinner5(){
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] == ("OXXXX")||
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] == ("XXXXX")){
             document.getElementById("status5").innerHTML="Congratulations! X is the winner! You have the first play in the next game.";
-            threelines()
+            document.getElementById("status5").classList.add("you-won");
+            document.getElementById("status5").classList.remove("draw");
+            document.getElementById("blocker5").style.display = "block";
             lastMove = "O";
-
             win.play();
             if(theme.currentTime>0){
                 theme.currentTime = 0;
@@ -155,9 +155,11 @@ function checkWinner5(){
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("OOOOX")||
          lines[i][0]+lines[i][1]+lines[i][2]+lines[i][3]+lines[i][4] ==("OOOOO")){
             document.getElementById("status5").innerHTML="Congratulations! O is the winner! You have the first play in the next game.";
-            threelines()
+            document.getElementById("status5").classList.add("you-won");
+            document.getElementById("status5").classList.remove("draw");
+            document.getElementById("blocker5").style.display = "block";
             lastMove = "X";
-            win.play();
+            win.play();            
             if(theme.currentTime>0){
                 theme.currentTime = 0;
                 theme.pause()
@@ -168,15 +170,10 @@ function checkWinner5(){
     }
 }
 
-function threelines(){
-    document.getElementById("status5").classList.add("you-won");
-    document.getElementById("status5").classList.remove("draw");
-    document.getElementById("blocker5").style.display = "block";
-}
 
 function checkDraw(){
     if (!gameTracker.includes("") && !document.getElementById("status").classList.contains("you-won")){
-        console.log(document.getElementById("status").classList); 
+        
         if(lastMove == "X"){
             document.getElementById("status").innerHTML="Draw! There is no winner. X has the first move in the next game.";
             lastMove = "O";
@@ -185,6 +182,7 @@ function checkDraw(){
             lastMove = "X";
         }        
         document.getElementById("status").classList.add("draw");
+        //draw.play();
         if(theme.currentTime>0){
             theme.currentTime = 0;
             theme.pause()
@@ -202,6 +200,7 @@ function checkDraw5(){
             lastMove = "X";
         }        
         document.getElementById("status5").classList.add("draw");
+        //draw.play();
         if(theme.currentTime>0){
             theme.currentTime = 0;
             theme.pause()
